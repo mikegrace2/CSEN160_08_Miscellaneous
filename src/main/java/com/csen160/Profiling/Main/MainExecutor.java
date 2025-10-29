@@ -1,4 +1,4 @@
-package com.csen160.Week09_I_Profiling.Main;
+package com.csen160.Profiling.Main;
 
 public class MainExecutor implements Runnable {
 	public static double calculate_Mult() {

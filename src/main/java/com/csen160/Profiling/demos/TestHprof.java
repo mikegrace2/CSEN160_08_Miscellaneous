@@ -1,4 +1,4 @@
-package com.csen160.Week09_I_Profiling.demos;
+package com.csen160.Profiling.demos;
 
 import java.io.IOException;
 
