@@ -1,5 +1,7 @@
 package com.csen160.B_reflections;
 
+import com.csen160.B_reflections.Examples.SecretClass;
+
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
@@ -7,8 +9,8 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 public class A_UsingRefelections {
-	public static void allFields(SecretClass mySecretClass) throws IllegalArgumentException, IllegalAccessException {
-		Field[] fields = mySecretClass.getClass().getDeclaredFields();
+	public static void allFields(Object myClassReference) throws IllegalArgumentException, IllegalAccessException {
+		Field[] fields = myClassReference.getClass().getDeclaredFields();
 
 		System.out.println("\nFields:");
 		for (Field field : fields) {
@@ -16,16 +18,16 @@ public class A_UsingRefelections {
 			if (field.getName().equals("password")) {
 				System.out.println("\t\tFound Password");
 				field.setAccessible(true);
-				field.set(mySecretClass, "New Password");
+				field.set(myClassReference, "New Password");
 			}
 		}
 		System.out.println();
 
-		System.out.println(mySecretClass);
+		System.out.println(myClassReference);
 	}
 
-	public static void checkAllMethods(SecretClass mySecretClass) throws IllegalAccessException, InvocationTargetException {
-		Method[] methods = mySecretClass.getClass().getDeclaredMethods();
+	public static void checkAllMethods(Object myClassReference) throws IllegalAccessException, InvocationTargetException {
+		Method[] methods = myClassReference.getClass().getDeclaredMethods();
 
 		System.out.println("\nMethods:");
 
@@ -35,7 +37,7 @@ public class A_UsingRefelections {
 			if (method.getName().equals("setDecryptMessage")) {
 				System.out.println("Found setDecryptMessage");
 				method.setAccessible(true);
-				method.invoke(mySecretClass, "NEW SECRET MESSAGE");
+				method.invoke(myClassReference, "NEW SECRET MESSAGE");
 			} else if (method.getName().equals("getSecretMission")) {
 				System.out.println("Found getSecretMission");
 				method.setAccessible(true);
@@ -45,11 +47,11 @@ public class A_UsingRefelections {
 		}
 		System.out.println();
 
-		System.out.println(mySecretClass);
+		System.out.println(myClassReference);
 	}
 	
 	public static void checkAllMethods2() throws IllegalAccessException, InvocationTargetException, ClassNotFoundException {
-		Class<?> myClass=Class.forName("com.csen160.B_reflections.SecretClass");
+		Class<?> myClass=Class.forName("com.csen160.B_reflections.Examples.SecretClass");
 		Method[] myMethods=myClass.getMethods();
 
 		System.out.println("\nMethods2:");
@@ -61,8 +63,8 @@ public class A_UsingRefelections {
 	}
 	
 	
-	public static void checkAnnotations(SecretClass mySecretClass){
-		Annotation[] annotations = mySecretClass.getClass().getAnnotations();
+	public static void checkAnnotations(Object myClassReference){
+		Annotation[] annotations = myClassReference.getClass().getAnnotations();
 
 		System.out.println("\nAnnotation:");
 
@@ -72,8 +74,8 @@ public class A_UsingRefelections {
 		System.out.println();
 	}
 	
-	public static void getConstructors(SecretClass mySecretClass){
-		Constructor<?>[] constructors = mySecretClass.getClass().getConstructors();
+	public static void getConstructors(Object myClassReference){
+		Constructor<?>[] constructors = myClassReference.getClass().getConstructors();
 
 		System.out.println("\nConstructors:");
 		System.out.println(""+constructors.toString());
@@ -86,7 +88,7 @@ public class A_UsingRefelections {
 
 	public static void check() throws ClassNotFoundException{
 		System.out.println("\nCheck:");
-        Class<?> myClass=Class.forName("com.csen160.B_reflections.SecretClass");
+        Class<?> myClass=Class.forName("com.csen160.B_reflections.Examples.SecretClass");
 		System.out.println("Class.toString = "+myClass);
 		System.out.println("Name           = "+myClass.getName());
 		System.out.println("CanonicalName  = "+myClass.getCanonicalName());
@@ -96,6 +98,7 @@ public class A_UsingRefelections {
 	}
 	
 	public static void main(String[] args) throws IllegalArgumentException, IllegalAccessException, InvocationTargetException, ClassNotFoundException {
+        // Only for testing purposes
 		SecretClass mySecretClass = new SecretClass("mike", "123456", 7866, "hhyvfdfedd", "hello");
 		System.out.println(mySecretClass);
 		
@@ -105,6 +108,6 @@ public class A_UsingRefelections {
 		A_UsingRefelections.checkAnnotations(mySecretClass);
 		A_UsingRefelections.getConstructors(mySecretClass);
 		A_UsingRefelections.checkArray(null);
-		//A_UsingRefelections.check();
+		A_UsingRefelections.check();
 	}
 }

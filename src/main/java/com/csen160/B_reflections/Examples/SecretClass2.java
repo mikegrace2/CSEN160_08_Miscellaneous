@@ -1,4 +1,4 @@
-package com.csen160.B_reflections;
+package com.csen160.B_reflections.Examples;
 
 public class SecretClass2 {
 	private final String login;

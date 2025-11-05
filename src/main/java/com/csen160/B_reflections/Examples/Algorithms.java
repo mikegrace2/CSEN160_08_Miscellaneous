@@ -1,4 +1,4 @@
-package com.csen160.B_reflections;
+package com.csen160.B_reflections.Examples;
 
 public class Algorithms {
 	private final String secretMessage="Catch me if you can";
