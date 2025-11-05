@@ -16,8 +16,7 @@ public class C_DataOld {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	
+
 	public C_DataOld() {
 		super();
 	}

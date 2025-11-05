@@ -7,10 +7,10 @@ public class D_UseRecordShort {
 		System.out.println(myData1);
 		System.out.println(myData2);
 		
-		//DataShort myData3=new DataShort(); // Does not work
-		//System.out.println(myData3.id());
-		//System.out.println(myData3.name());
-		//System.out.println(myData3);
+//		A_DataShort myData3=new A_DataShort(); // Does not work
+//		System.out.println(myData3.id());
+//		System.out.println(myData3.name());
+//		System.out.println(myData3);
 		
 		System.out.println(myData1.equals(myData2));
 	}
