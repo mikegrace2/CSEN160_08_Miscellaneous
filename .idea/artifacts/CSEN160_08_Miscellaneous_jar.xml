@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="CSEN160_08_Miscellaneous:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/CSEN160_08_Miscellaneous_jar</output-path>
+    <root id="archive" name="CSEN160_08_Miscellaneous.jar">
+      <element id="module-output" name="CSEN160_08_Miscellaneous" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/javax/persistence/javax.persistence-api/2.2/javax.persistence-api-2.2.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
