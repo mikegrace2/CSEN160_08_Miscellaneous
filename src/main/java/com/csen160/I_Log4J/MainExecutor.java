@@ -15,6 +15,10 @@ public class MainExecutor {
         }
         long end = System.currentTimeMillis();
         logger.info("{} Multiplications: Time in ms: {}", Thread.currentThread().getName(), (end - start));
+        logger.warn("{} Multiplications: Time in ms: {}", Thread.currentThread().getName(), (end - start));
+        logger.trace("{} Multiplications: Time in ms: {}", Thread.currentThread().getName(), (end - start));
+        logger.error("{} Multiplications: Time in ms: {}", Thread.currentThread().getName(), (end - start));
+        logger.fatal("{} Multiplications: Time in ms: {}", Thread.currentThread().getName(), (end - start));
         return returnVal;
     }
 }
