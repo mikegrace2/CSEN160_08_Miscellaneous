@@ -1,8 +1,8 @@
 package com.csen160.G_Optimizations;
 
 public class C_LoopDeLoop {
-	public static int NUM_COLS = 16000;
-	public static int NUM_ROWS = 16000;
+	public static int NUM_COLS = 20000;
+	public static int NUM_ROWS = 20000;
 	public static int[][] myArr=new int[NUM_ROWS][NUM_COLS];
 	
 	public static void forLoopSlow() {
