@@ -41,13 +41,13 @@ public class E_LookupTable {
 			E_LookupTable.daysOfAMonthIfs(numberArr[i]);
 		}
 		long end1=System.currentTimeMillis();
-		System.out.println("daysOfAMonthIfs="+(end1-start1));
+		System.out.println("Executed="+SIZE+" daysOfAMonthIfs    ms="+(end1-start1));
 		
 		long start2=System.currentTimeMillis();
 		for (int i=0;i<SIZE;i++) {
 			E_LookupTable.daysOfAMonthLookup(numberArr[i]);
 		}
 		long end2=System.currentTimeMillis();
-		System.out.println("daysOfAMonthLookup="+(end2-start2));		
+		System.out.println("Executed="+SIZE+" daysOfAMonthLookup ms="+(end2-start2));
 	}
 }
